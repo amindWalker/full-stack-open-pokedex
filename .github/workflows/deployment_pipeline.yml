@@ -46,19 +46,19 @@ jobs:
           run: cd deploy && flyctl deploy
       - name: Notify on deploy success
         uses: rjstone/discord-webhook-notify@v1
-        if: ${{ success() }}
+        if: success()
         with:
             severity: info
             details: "[ Success ]: deploy complete and uploaded"
-            webhookUrl: ${{ secrets.DISCORD_WEBHOOK_TOKEN }}
+            webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
       - name: Notify on deploy fail
         uses: rjstone/discord-webhook-notify@v1
-        if: ${{ failure() }}
+        if: failure()
         with:
             severity: error
             details: "[ Error ]: deploy aborted"
             args: "Commit: ${{ github.event.head_commit }} | ${{ github.event_name }} event triggered by ${{ github.event.actor }}"
-            webhookUrl: ${{ secrets.DISCORD_WEBHOOK_TOKEN }}
+            webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
       - name: Check the deployed service URL
         uses: jtalk/url-health-check-action@v2
         with:
