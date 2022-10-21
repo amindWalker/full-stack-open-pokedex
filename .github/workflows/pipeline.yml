@@ -5,6 +5,8 @@ on:
     branches:
       - master
       # note that your "main" branch might be called main instead of master
+env:
+  FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
 
 jobs:
   deployment_pipeline:
@@ -31,6 +33,10 @@ jobs:
         with:
           command: npm run test:e2e
           start: |
-            npm run build``
+            npm run build
             npm run start-prod
           wait-on: http://localhost:5000
+      - name: "Deploy to Fly.io"
+        uses: superfly/flyctl-actions/setup-flyctl@master
+        with:
+          run: cd deploy && flyctl deploy

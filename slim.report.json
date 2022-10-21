@@ -1,0 +1,390 @@
+{
+  "version": "1.0",
+  "engine": "linux|Transformer|1.38.0|937cad81bc1b1be05e7fc3cf0f6259c4a1f3a452|2022-08-28_05:51:34AM",
+  "containerized": false,
+  "host_distro": {
+    "name": "Manjaro Linux",
+    "version": "",
+    "display_name": "Manjaro Linux"
+  },
+  "type": "build",
+  "state": "done",
+  "target_reference": "pokedex",
+  "system": {
+    "type": "Linux",
+    "release": "6.0.1-1199.native",
+    "distro": {
+      "name": "Debian GNU/Linux",
+      "version": "10",
+      "display_name": "Debian GNU/Linux 10 (buster)"
+    }
+  },
+  "source_image": {
+    "identity": {
+      "id": "sha256:da68fd32f47b404d4a92ab67d2a7f2b7ee43ebdb99f4377821f25dae802ea62e",
+      "tags": [
+        "latest"
+      ],
+      "names": [
+        "pokedex:latest"
+      ]
+    },
+    "size": 418036906,
+    "size_human": "418 MB",
+    "create_time": "2022-10-21T14:36:11Z",
+    "docker_version": "20.10.19",
+    "architecture": "amd64",
+    "user": "node",
+    "exposed_ports": [
+      "5000/tcp"
+    ],
+    "os": "linux",
+    "env_vars": [
+      "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+      "NODE_VERSION=18.11.0",
+      "YARN_VERSION=1.22.19",
+      "NODE_ENV=production"
+    ],
+    "container_entry": {
+      "exe_path": ""
+    }
+  },
+  "minified_image_size": 93123496,
+  "minified_image_size_human": "93 MB",
+  "minified_image": "pokedex.slim",
+  "minified_image_has_data": true,
+  "minified_by": 4.489059409882979,
+  "artifact_location": "/tmp/docker-slim-state/.docker-slim-state/images/da68fd32f47b404d4a92ab67d2a7f2b7ee43ebdb99f4377821f25dae802ea62e/artifacts",
+  "container_report_name": "creport.json",
+  "seccomp_profile_name": "pokedex-seccomp.json",
+  "apparmor_profile_name": "pokedex-apparmor-profile",
+  "image_stack": [
+    {
+      "is_top_image": false,
+      "id": "sha256:43504e8abdba1b7fff257c9de9e5571102740d749a56b5cdcf4b51d35d73cbe8",
+      "full_name": "node:18.11.0-buster-slim",
+      "repo_name": "node",
+      "version_tag": "18.11.0-buster-slim",
+      "raw_tags": [
+        "node:18.11.0-buster-slim"
+      ],
+      "create_time": "2022-10-14T20:23:16Z",
+      "new_size": 229430410,
+      "new_size_human": "229 MB",
+      "instructions": [
+        {
+          "type": "ADD",
+          "time": "2022-10-04T23:27:01Z",
+          "is_nop": true,
+          "local_image_exists": false,
+          "layer_index": 0,
+          "size": 69262368,
+          "size_human": "69 MB",
+          "params": "file:706105a4a2ea63ba10911afb5998d321ff745f9bcedd2e2e8efcf33f5dad584b in /",
+          "command_snippet": "ADD file:706105a4a2ea63ba10911afb5998d321ff7...",
+          "command_all": "ADD file:706105a4a2ea63ba10911afb5998d321ff745f9bcedd2e2e8efcf33f5dad584b /",
+          "target": "/",
+          "source_type": "file"
+        },
+        {
+          "type": "CMD",
+          "time": "2022-10-04T23:27:01Z",
+          "is_nop": true,
+          "is_exec_form": true,
+          "local_image_exists": false,
+          "layer_index": 0,
+          "size": 0,
+          "params": "[\"bash\"]\n",
+          "command_snippet": "CMD [\"bash\"]\n",
+          "command_all": "CMD [\"bash\"]\n"
+        },
+        {
+          "type": "RUN",
+          "time": "2022-10-05T13:13:40Z",
+          "is_nop": false,
+          "local_image_exists": false,
+          "layer_index": 0,
+          "size": 333494,
+          "size_human": "334 kB",
+          "command_snippet": "RUN groupadd --gid 1000 node && \\\n\tuseradd -...",
+          "command_all": "RUN groupadd --gid 1000 node && \\\n\tuseradd --uid 1000 --gid node --shell /bin/bash --create-home node",
+          "system_commands": [
+            "groupadd --gid 1000 node",
+            "useradd --uid 1000 --gid node --shell /bin/bash --create-home node"
+          ]
+        },
+        {
+          "type": "ENV",
+          "time": "2022-10-14T20:22:35Z",
+          "is_nop": true,
+          "local_image_exists": false,
+          "layer_index": 0,
+          "size": 0,
+          "params": "NODE_VERSION=18.11.0",
+          "command_snippet": "ENV NODE_VERSION=18.11.0",
+          "command_all": "ENV NODE_VERSION=18.11.0"
+        },
+        {
+          "type": "RUN",
+          "time": "2022-10-14T20:23:02Z",
+          "is_nop": false,
+          "local_image_exists": false,
+          "layer_index": 0,
+          "size": 150422524,
+          "size_human": "150 MB",
+          "command_snippet": "RUN ARCH= && \\\n\tdpkgArch=\"$(dpkg --print-arc...",
+          "command_all": "RUN ARCH= && \\\n\tdpkgArch=\"$(dpkg --print-architecture)\" && \\\n\tcase \"${dpkgArch##*-}\" in       amd64) ARCH='x64';;       ppc64el) ARCH='ppc64le';;       s390x) ARCH='s390x';;       arm64) ARCH='arm64';;       armhf) ARCH='armv7l';;       i386) ARCH='x86';;       *) echo \"unsupported architecture\"; exit 1 ;;     esac && \\\n\tset -ex && \\\n\tapt-get update && \\\n\tapt-get install -y ca-certificates curl wget gnupg dirmngr xz-utils libatomic1 --no-install-recommends && \\\n\trm -rf /var/lib/apt/lists/* && \\\n\tfor key in       4ED778F539E3634C779C87C6D7062848A1AB005C       141F07595B7B3FFE74309A937405533BE57C7D57       74F12602B6F1C4E913FAA37AD3A89613643B6201       61FC681DFB92A079F1685E77973F295594EC4689       8FCCA13FEF1D0C2E91008E09770F7A9A5AE15600       C4F0DFFF4E8C1A8236409D08E73BC641CC11F4C8       890C08DB8579162FEE0DF9DB8BEAB4DFCF555EF4       C82FA3AE1CBEDC6BE46B9360C43CEC45C17AB93C       108F52B48DB57BB0CC439B2997B01419BD92F80A     ; do       gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys \"$key\" ||       gpg --batch --keyserver keyserver.ubuntu.com --recv-keys \"$key\" ;     done && \\\n\tcurl -fsSLO --compressed \"https://nodejs.org/dist/v$NODE_VERSION/node-v$NODE_VERSION-linux-$ARCH.tar.xz\" && \\\n\tcurl -fsSLO --compressed \"https://nodejs.org/dist/v$NODE_VERSION/SHASUMS256.txt.asc\" && \\\n\tgpg --batch --decrypt --output SHASUMS256.txt SHASUMS256.txt.asc && \\\n\tgrep \" node-v$NODE_VERSION-linux-$ARCH.tar.xz\\$\" SHASUMS256.txt | sha256sum -c - && \\\n\ttar -xJf \"node-v$NODE_VERSION-linux-$ARCH.tar.xz\" -C /usr/local --strip-components=1 --no-same-owner && \\\n\trm \"node-v$NODE_VERSION-linux-$ARCH.tar.xz\" SHASUMS256.txt.asc SHASUMS256.txt && \\\n\tapt-mark auto '.*' > /dev/null && \\\n\tfind /usr/local -type f -executable -exec ldd '{}' ';'       | awk '/=>/ { print $(NF-1) }'       | sort -u       | xargs -r dpkg-query --search       | cut -d: -f1       | sort -u       | xargs -r apt-mark manual && \\\n\tapt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false && \\\n\tln -s /usr/local/bin/node /usr/local/bin/nodejs && \\\n\tnode --version && \\\n\tnpm --version",
+          "system_commands": [
+            "ARCH=",
+            "dpkgArch=\"$(dpkg --print-architecture)\"",
+            "case \"${dpkgArch##*-}\" in       amd64) ARCH='x64';;       ppc64el) ARCH='ppc64le';;       s390x) ARCH='s390x';;       arm64) ARCH='arm64';;       armhf) ARCH='armv7l';;       i386) ARCH='x86';;       *) echo \"unsupported architecture\"; exit 1 ;;     esac",
+            "set -ex",
+            "apt-get update",
+            "apt-get install -y ca-certificates curl wget gnupg dirmngr xz-utils libatomic1 --no-install-recommends",
+            "rm -rf /var/lib/apt/lists/*",
+            "for key in       4ED778F539E3634C779C87C6D7062848A1AB005C       141F07595B7B3FFE74309A937405533BE57C7D57       74F12602B6F1C4E913FAA37AD3A89613643B6201       61FC681DFB92A079F1685E77973F295594EC4689       8FCCA13FEF1D0C2E91008E09770F7A9A5AE15600       C4F0DFFF4E8C1A8236409D08E73BC641CC11F4C8       890C08DB8579162FEE0DF9DB8BEAB4DFCF555EF4       C82FA3AE1CBEDC6BE46B9360C43CEC45C17AB93C       108F52B48DB57BB0CC439B2997B01419BD92F80A     ; do       gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys \"$key\" ||       gpg --batch --keyserver keyserver.ubuntu.com --recv-keys \"$key\" ;     done",
+            "curl -fsSLO --compressed \"https://nodejs.org/dist/v$NODE_VERSION/node-v$NODE_VERSION-linux-$ARCH.tar.xz\"",
+            "curl -fsSLO --compressed \"https://nodejs.org/dist/v$NODE_VERSION/SHASUMS256.txt.asc\"",
+            "gpg --batch --decrypt --output SHASUMS256.txt SHASUMS256.txt.asc",
+            "grep \" node-v$NODE_VERSION-linux-$ARCH.tar.xz$\" SHASUMS256.txt | sha256sum -c -",
+            "tar -xJf \"node-v$NODE_VERSION-linux-$ARCH.tar.xz\" -C /usr/local --strip-components=1 --no-same-owner",
+            "rm \"node-v$NODE_VERSION-linux-$ARCH.tar.xz\" SHASUMS256.txt.asc SHASUMS256.txt",
+            "apt-mark auto '.*' > /dev/null",
+            "find /usr/local -type f -executable -exec ldd '{}' ';'       | awk '/=>/ { print $(NF-1) }'       | sort -u       | xargs -r dpkg-query --search       | cut -d: -f1       | sort -u       | xargs -r apt-mark manual",
+            "apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false",
+            "ln -s /usr/local/bin/node /usr/local/bin/nodejs",
+            "node --version",
+            "npm --version"
+          ]
+        },
+        {
+          "type": "ENV",
+          "time": "2022-10-14T20:23:02Z",
+          "is_nop": true,
+          "local_image_exists": false,
+          "layer_index": 0,
+          "size": 0,
+          "params": "YARN_VERSION=1.22.19",
+          "command_snippet": "ENV YARN_VERSION=1.22.19",
+          "command_all": "ENV YARN_VERSION=1.22.19"
+        },
+        {
+          "type": "RUN",
+          "time": "2022-10-14T20:23:16Z",
+          "is_nop": false,
+          "local_image_exists": false,
+          "layer_index": 0,
+          "size": 9411636,
+          "size_human": "9.4 MB",
+          "command_snippet": "RUN set -ex && \\\n\tsavedAptMark=\"$(apt-mark s...",
+          "command_all": "RUN set -ex && \\\n\tsavedAptMark=\"$(apt-mark showmanual)\" && \\\n\tapt-get update && \\\n\tapt-get install -y ca-certificates curl wget gnupg dirmngr --no-install-recommends && \\\n\trm -rf /var/lib/apt/lists/* && \\\n\tfor key in     6A010C5166006599AA17F08146C2130DFD2497F5   ; do     gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys \"$key\" ||     gpg --batch --keyserver keyserver.ubuntu.com --recv-keys \"$key\" ;   done && \\\n\tcurl -fsSLO --compressed \"https://yarnpkg.com/downloads/$YARN_VERSION/yarn-v$YARN_VERSION.tar.gz\" && \\\n\tcurl -fsSLO --compressed \"https://yarnpkg.com/downloads/$YARN_VERSION/yarn-v$YARN_VERSION.tar.gz.asc\" && \\\n\tgpg --batch --verify yarn-v$YARN_VERSION.tar.gz.asc yarn-v$YARN_VERSION.tar.gz && \\\n\tmkdir -p /opt && \\\n\ttar -xzf yarn-v$YARN_VERSION.tar.gz -C /opt/ && \\\n\tln -s /opt/yarn-v$YARN_VERSION/bin/yarn /usr/local/bin/yarn && \\\n\tln -s /opt/yarn-v$YARN_VERSION/bin/yarnpkg /usr/local/bin/yarnpkg && \\\n\trm yarn-v$YARN_VERSION.tar.gz.asc yarn-v$YARN_VERSION.tar.gz && \\\n\tapt-mark auto '.*' > /dev/null && \\\n\t{ [ -z \"$savedAptMark\" ] || apt-mark manual $savedAptMark > /dev/null; } && \\\n\tfind /usr/local -type f -executable -exec ldd '{}' ';'     | awk '/=>/ { print $(NF-1) }'     | sort -u     | xargs -r dpkg-query --search     | cut -d: -f1     | sort -u     | xargs -r apt-mark manual && \\\n\tapt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false && \\\n\tyarn --version",
+          "system_commands": [
+            "set -ex",
+            "savedAptMark=\"$(apt-mark showmanual)\"",
+            "apt-get update",
+            "apt-get install -y ca-certificates curl wget gnupg dirmngr --no-install-recommends",
+            "rm -rf /var/lib/apt/lists/*",
+            "for key in     6A010C5166006599AA17F08146C2130DFD2497F5   ; do     gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys \"$key\" ||     gpg --batch --keyserver keyserver.ubuntu.com --recv-keys \"$key\" ;   done",
+            "curl -fsSLO --compressed \"https://yarnpkg.com/downloads/$YARN_VERSION/yarn-v$YARN_VERSION.tar.gz\"",
+            "curl -fsSLO --compressed \"https://yarnpkg.com/downloads/$YARN_VERSION/yarn-v$YARN_VERSION.tar.gz.asc\"",
+            "gpg --batch --verify yarn-v$YARN_VERSION.tar.gz.asc yarn-v$YARN_VERSION.tar.gz",
+            "mkdir -p /opt",
+            "tar -xzf yarn-v$YARN_VERSION.tar.gz -C /opt/",
+            "ln -s /opt/yarn-v$YARN_VERSION/bin/yarn /usr/local/bin/yarn",
+            "ln -s /opt/yarn-v$YARN_VERSION/bin/yarnpkg /usr/local/bin/yarnpkg",
+            "rm yarn-v$YARN_VERSION.tar.gz.asc yarn-v$YARN_VERSION.tar.gz",
+            "apt-mark auto '.*' > /dev/null",
+            "{ [ -z \"$savedAptMark\" ] || apt-mark manual $savedAptMark > /dev/null; }",
+            "find /usr/local -type f -executable -exec ldd '{}' ';'     | awk '/=>/ { print $(NF-1) }'     | sort -u     | xargs -r dpkg-query --search     | cut -d: -f1     | sort -u     | xargs -r apt-mark manual",
+            "apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false",
+            "yarn --version"
+          ]
+        },
+        {
+          "type": "COPY",
+          "time": "2022-10-14T20:23:16Z",
+          "is_nop": true,
+          "local_image_exists": false,
+          "layer_index": 0,
+          "size": 388,
+          "size_human": "388 B",
+          "params": "file:4d192565a7220e135cab6c77fbc1c73211b69f3d9fb37e62857b2c6eb9363d51 in /usr/local/bin/",
+          "command_snippet": "COPY file:4d192565a7220e135cab6c77fbc1c73211...",
+          "command_all": "COPY file:4d192565a7220e135cab6c77fbc1c73211b69f3d9fb37e62857b2c6eb9363d51 /usr/local/bin/",
+          "target": "/usr/local/bin/",
+          "source_type": "file"
+        },
+        {
+          "type": "ENTRYPOINT",
+          "time": "2022-10-14T20:23:16Z",
+          "is_nop": true,
+          "is_exec_form": true,
+          "local_image_exists": false,
+          "layer_index": 0,
+          "size": 0,
+          "params": "[\"docker-entrypoint.sh\"]\n",
+          "command_snippet": "ENTRYPOINT [\"docker-entrypoint.sh\"]\n",
+          "command_all": "ENTRYPOINT [\"docker-entrypoint.sh\"]\n"
+        },
+        {
+          "type": "CMD",
+          "time": "2022-10-14T20:23:16Z",
+          "is_last_instruction": true,
+          "is_nop": true,
+          "is_exec_form": true,
+          "local_image_exists": true,
+          "layer_index": 0,
+          "size": 0,
+          "params": "[\"node\"]\n",
+          "command_snippet": "CMD [\"node\"]\n",
+          "command_all": "CMD [\"node\"]\n",
+          "raw_tags": [
+            "node:18.11.0-buster-slim"
+          ]
+        }
+      ]
+    },
+    {
+      "is_top_image": true,
+      "id": "sha256:da68fd32f47b404d4a92ab67d2a7f2b7ee43ebdb99f4377821f25dae802ea62e",
+      "full_name": "pokedex:latest",
+      "repo_name": "pokedex",
+      "version_tag": "latest",
+      "raw_tags": [
+        "pokedex:latest"
+      ],
+      "create_time": "2022-10-21T14:36:11Z",
+      "new_size": 188606496,
+      "new_size_human": "189 MB",
+      "base_image_id": "sha256:43504e8abdba1b7fff257c9de9e5571102740d749a56b5cdcf4b51d35d73cbe8",
+      "instructions": [
+        {
+          "type": "ENV",
+          "time": "2022-10-21T11:44:26Z",
+          "is_nop": true,
+          "local_image_exists": true,
+          "intermediate_image_id": "sha256:179a7c6b9b9ea8336e0124c8d98380f361b50d4c2e1cc5781e1fd195b9eb2dce",
+          "layer_index": 0,
+          "size": 0,
+          "params": "NODE_ENV=production",
+          "command_snippet": "ENV NODE_ENV=production",
+          "command_all": "ENV NODE_ENV=production"
+        },
+        {
+          "type": "COPY",
+          "time": "2022-10-21T11:44:27Z",
+          "is_nop": true,
+          "local_image_exists": true,
+          "intermediate_image_id": "sha256:18caad3dfa831f69b81c0eacd3884c032f1a606e27f1b0dad404753754d2906d",
+          "layer_index": 0,
+          "size": 74758614,
+          "size_human": "75 MB",
+          "params": "dir:4d6929c5557c51ece49685656785cca2dd1d7f906c24ebf3d4774f81a9cf502f in /usr/bin",
+          "command_snippet": "COPY dir:4d6929c5557c51ece49685656785cca2dd1...",
+          "command_all": "COPY dir:4d6929c5557c51ece49685656785cca2dd1d7f906c24ebf3d4774f81a9cf502f /usr/bin",
+          "target": "/usr/bin",
+          "source_type": "dir"
+        },
+        {
+          "type": "USER",
+          "time": "2022-10-21T11:44:27Z",
+          "is_nop": true,
+          "local_image_exists": true,
+          "intermediate_image_id": "sha256:9023d310f5bc0f01fff37ba150de3fcf66072efda4fe76ab3b3bf492b0dbca0a",
+          "layer_index": 0,
+          "size": 0,
+          "params": "node",
+          "command_snippet": "USER node",
+          "command_all": "USER node"
+        },
+        {
+          "type": "WORKDIR",
+          "time": "2022-10-21T11:44:27Z",
+          "is_nop": true,
+          "local_image_exists": true,
+          "intermediate_image_id": "sha256:9b0d4ffcdf69a30e36966e51f61e1d68caccf3a8d377ee3c6893a028599e4352",
+          "layer_index": 0,
+          "size": 0,
+          "params": "/usr/src/app",
+          "command_snippet": "WORKDIR /usr/src/app",
+          "command_all": "WORKDIR /usr/src/app",
+          "system_commands": [
+            "mkdir -p /usr/src/app"
+          ]
+        },
+        {
+          "type": "COPY",
+          "time": "2022-10-21T11:44:27Z",
+          "is_nop": true,
+          "local_image_exists": true,
+          "intermediate_image_id": "sha256:844577c7baf4acf8de10057d8e6baf07c4b3f68fbb710cf96fc9aef2bae6e506",
+          "layer_index": 0,
+          "size": 7254191,
+          "size_human": "7.3 MB",
+          "params": "--chown=node:nodedir:f944d7461e0e33369b842cf8fea95bda43d4389ea9f6c2f71174696bb1136aeb in /usr/src/app/node_modules",
+          "command_snippet": "COPY --chown=node:nodedir:f944d7461e0e33369b...",
+          "command_all": "COPY --chown=node:nodedir:f944d7461e0e33369b842cf8fea95bda43d4389ea9f6c2f71174696bb1136aeb /usr/src/app/node_modules",
+          "target": "/usr/src/app/node_modules",
+          "source_type": "--chown=node"
+        },
+        {
+          "type": "COPY",
+          "time": "2022-10-21T14:36:07Z",
+          "is_nop": true,
+          "local_image_exists": true,
+          "intermediate_image_id": "sha256:60bd7ecd5b83feda561b908b1b18ba725fd1de044063bfe67bfe3f6fc4b8ec8a",
+          "layer_index": 0,
+          "size": 94934655,
+          "size_human": "95 MB",
+          "params": "--chown=node:nodedir:a4e506ec39e6ce0b39aca1dcf0cb896fad954d89fa4018a8cecc349791ee882f in /usr/src/app/",
+          "command_snippet": "COPY --chown=node:nodedir:a4e506ec39e6ce0b39...",
+          "command_all": "COPY --chown=node:nodedir:a4e506ec39e6ce0b39aca1dcf0cb896fad954d89fa4018a8cecc349791ee882f /usr/src/app/",
+          "target": "/usr/src/app/",
+          "source_type": "--chown=node"
+        },
+        {
+          "type": "RUN",
+          "time": "2022-10-21T14:36:11Z",
+          "is_nop": false,
+          "local_image_exists": true,
+          "intermediate_image_id": "sha256:7e141a195292462c6e1d97b903f5fb266e032077f28ac16ccceee97534d702dd",
+          "layer_index": 0,
+          "size": 11659036,
+          "size_human": "12 MB",
+          "command_snippet": "RUN npm ci --only=production",
+          "command_all": "RUN npm ci --only=production",
+          "system_commands": [
+            "npm ci --only=production"
+          ]
+        },
+        {
+          "type": "EXPOSE",
+          "time": "2022-10-21T14:36:11Z",
+          "is_nop": true,
+          "local_image_exists": true,
+          "intermediate_image_id": "sha256:6a9e6e2ebf9571110f9243b2fc412de4cf7c93a24f2455bd4b65d02c57f8f840",
+          "layer_index": 0,
+          "size": 0,
+          "params": "5000",
+          "command_snippet": "EXPOSE 5000",
+          "command_all": "EXPOSE 5000"
+        },
+        {
+          "type": "CMD",
+          "time": "2022-10-21T14:36:11Z",
+          "is_last_instruction": true,
+          "is_nop": true,
+          "local_image_exists": true,
+          "layer_index": 0,
+          "size": 0,
+          "params": "node app.js",
+          "command_snippet": "CMD node app.js",
+          "command_all": "CMD node app.js",
+          "raw_tags": [
+            "pokedex:latest"
+          ]
+        }
+      ]
+    }
+  ]
+}
